@@ -2,7 +2,7 @@
 
 import { CircleCheck, CircleHelp, CircleX, GripVertical } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { type CSSProperties, memo, useEffect, useRef } from "react";
+import { type CSSProperties, memo, type ReactNode, useEffect, useRef } from "react";
 import { boundsOf, drawnInk, inkBounds, strokePath } from "@/lib/board/geometry";
 import type {
   BoardObject,
@@ -82,11 +82,28 @@ function SelectionBox({ o }: { o: BoardObject }) {
   );
 }
 
+/**
+ * Draws its children in chalk on a chalkboard (`.chalk` → the #chalk filter).
+ * The invisible rect gives the group a real box: the filter region is sized from
+ * it, and a level line (a fraction bar after Beautify) has no height of its own.
+ */
+function Chalk({ x, y, w, h, pad, children }: { x: number; y: number; w: number; h: number; pad: number; children: ReactNode }) {
+  return (
+    <g className="chalk">
+      <rect x={x - pad} y={y - pad} width={w + pad * 2} height={h + pad * 2} fill="none" pointerEvents="none" />
+      {children}
+    </g>
+  );
+}
+
 function StrokeView({ o, selected }: { o: StrokeObject; selected: boolean }) {
   const d = strokePath(o.points);
+  const b = inkBounds([{ x: 0, y: 0, points: o.points }]);
   return (
     <>
-      <path d={d} fill="none" stroke={o.color} strokeWidth={o.size} strokeLinecap="round" strokeLinejoin="round" />
+      <Chalk {...b} pad={o.size + 4}>
+        <path d={d} fill="none" stroke={o.color} strokeWidth={o.size} strokeLinecap="round" strokeLinejoin="round" />
+      </Chalk>
       {/* Wider invisible path so thin lines are easy to grab and erase. */}
       <path d={d} fill="none" stroke="transparent" strokeWidth={Math.max(o.size, 16)} strokeLinecap="round" strokeLinejoin="round" pointerEvents="stroke" />
       {selected ? <SelectionBox o={o} /> : null}
@@ -103,21 +120,21 @@ function ShapeView({ o, selected }: { o: ShapeObject; selected: boolean }) {
   const h = Math.abs(o.h);
   return (
     <>
-      {o.kind === "line" ? (
-        <>
+      <Chalk x={x} y={y} w={w} h={h} pad={o.size + 4}>
+        {o.kind === "line" ? (
           <line x1={0} y1={0} x2={o.w} y2={o.h} {...common} />
-          <line x1={0} y1={0} x2={o.w} y2={o.h} {...hit} />
-        </>
-      ) : o.kind === "rect" ? (
-        <>
+        ) : o.kind === "rect" ? (
           <rect x={x} y={y} width={w} height={h} rx={4} {...common} />
-          <rect x={x} y={y} width={w} height={h} rx={4} {...hit} />
-        </>
-      ) : (
-        <>
+        ) : (
           <ellipse cx={x + w / 2} cy={y + h / 2} rx={w / 2} ry={h / 2} {...common} />
-          <ellipse cx={x + w / 2} cy={y + h / 2} rx={w / 2} ry={h / 2} {...hit} />
-        </>
+        )}
+      </Chalk>
+      {o.kind === "line" ? (
+        <line x1={0} y1={0} x2={o.w} y2={o.h} {...hit} />
+      ) : o.kind === "rect" ? (
+        <rect x={x} y={y} width={w} height={h} rx={4} {...hit} />
+      ) : (
+        <ellipse cx={x + w / 2} cy={y + h / 2} rx={w / 2} ry={h / 2} {...hit} />
       )}
       {selected ? <SelectionBox o={o} /> : null}
     </>
@@ -234,19 +251,21 @@ function InkMathView({ o, ink, selected }: { o: MathObject; ink: StrokeObject[];
         vectorEffect="non-scaling-stroke"
         pointerEvents="all"
       />
-      {ink.map((s) => (
-        <path
-          key={s.id}
-          transform={`translate(${s.x} ${s.y})`}
-          d={strokePath(s.points)}
-          fill="none"
-          stroke={s.color}
-          strokeWidth={s.size}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          pointerEvents="none"
-        />
-      ))}
+      <Chalk {...b} pad={pad}>
+        {ink.map((s) => (
+          <path
+            key={s.id}
+            transform={`translate(${s.x} ${s.y})`}
+            d={strokePath(s.points)}
+            fill="none"
+            stroke={s.color}
+            strokeWidth={s.size}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            pointerEvents="none"
+          />
+        ))}
+      </Chalk>
       {o.validation ? (
         <foreignObject x={b.x - pad} y={b.y - pad - 24} width={200} height={22} pointerEvents="none">
           <StatusBadge status={o.validation} />

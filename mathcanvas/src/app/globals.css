@@ -1,12 +1,85 @@
 @import "tailwindcss";
 
 /* ───────────── Design tokens ─────────────
-   Light: clean classroom whiteboard (white board, dot grid, blue actions).
-   Dark: night study mode (deep canvas, violet glow, frosted panels).        */
+   Default: the slate blackboard (bảng đen) with chalk.
+   data-theme="green": the green classroom board (bảng xanh) with chalk.
+   data-theme="light": a clean whiteboard with markers.                       */
 :root {
+  --app: #111312;
+  --canvas: #222624;
+  --canvas-hi: #2a2f2c;
+  --dot: transparent;
+  --grid: rgb(236 236 226 / 0.06);
+  /* Varnished wooden frame. */
+  --frame: linear-gradient(180deg, #8a5a33 0%, #6b4223 40%, #5a361c 60%, #7d5030 100%);
+  --frame-size: 10px;
+  --frame-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.35), inset 0 6px 14px rgb(0 0 0 / 0.35);
+  --chalk: url(#chalk);
+  --chalk-soft: url(#chalk-soft);
+  --panel: #1a1d1c;
+  --panel-2: rgb(255 255 255 / 0.045);
+  --glass: rgb(26 29 28 / 0.96);
+  --ink: #f2f0e6;
+  --muted: #b0b5b1;
+  --line: rgb(242 240 230 / 0.12);
+  --line-strong: rgb(242 240 230 / 0.24);
+  --brand: #9fd3f5;
+  --brand-strong: #bfe2fa;
+  --brand-soft: rgb(159 211 245 / 0.15);
+  --on-brand: #111312;
+  --violet: #d8bdf6;
+  --violet-soft: rgb(216 189 246 / 0.15);
+  --accent: #fcd36b;
+  --good: #a6e8b0;
+  --good-soft: rgb(166 232 176 / 0.13);
+  --bad: #ffa29a;
+  --bad-soft: rgb(255 162 154 / 0.13);
+  --warn: #f5dc7a;
+  --warn-soft: rgb(245 220 122 / 0.13);
+  /* Chalk sticks: white, lavender, blue, red, green, yellow. */
+  --pen-ink: #f4f2ea;
+  --pen-violet: #dcc2f7;
+  --pen-blue: #a3d5f7;
+  --pen-red: #ff9f95;
+  --pen-green: #bdeba4;
+  --pen-orange: #fcd96f;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.35);
+  --shadow-md: 0 6px 18px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 18px 48px rgb(0 0 0 / 0.5);
+  /* Old chalk wiped with a duster, and the board's own grain. */
+  --glow: radial-gradient(38rem 16rem at 22% 30%, rgb(255 255 255 / 0.05), transparent 70%),
+    radial-gradient(30rem 12rem at 72% 68%, rgb(255 255 255 / 0.04), transparent 70%),
+    radial-gradient(22rem 9rem at 55% 18%, rgb(255 255 255 / 0.03), transparent 70%),
+    radial-gradient(ellipse at center, var(--canvas-hi), var(--canvas) 75%);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --blur: none;
+  color-scheme: dark;
+}
+
+:root[data-theme="green"] {
+  --app: #13211a;
+  --canvas: #24432f;
+  --canvas-hi: #2c5139;
+  --grid: rgb(236 244 226 / 0.075);
+  /* Aluminium frame. */
+  --frame: linear-gradient(180deg, #d9dee2 0%, #a7afb6 45%, #8d959c 55%, #c9cfd4 100%);
+  --panel: #182a20;
+  --glass: rgb(24 42 32 / 0.96);
+  --muted: #a8bcae;
+  --on-brand: #10241a;
+}
+
+:root[data-theme="light"] {
   --app: #f5f7fa;
   --canvas: #ffffff;
+  --canvas-hi: #ffffff;
   --dot: #d7dde6;
+  --grid: transparent;
+  --frame: none;
+  --frame-size: 0px;
+  --frame-shadow: none;
+  --chalk: none;
+  --chalk-soft: none;
   --panel: #ffffff;
   --panel-2: #f7f9fc;
   --glass: #ffffff;
@@ -37,88 +110,8 @@
   --shadow-md: 0 4px 12px rgb(16 24 40 / 0.08), 0 1px 3px rgb(16 24 40 / 0.06);
   --shadow-lg: 0 12px 32px rgb(16 24 40 / 0.12), 0 2px 6px rgb(16 24 40 / 0.06);
   --glow: none;
-  --blur: none;
+  --grain: none;
   color-scheme: light;
-}
-
-/* Dark tokens, applied by system preference unless the learner chose light. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --app: #0c0c11;
-    --canvas: #111117;
-    --dot: #2a2a36;
-    --panel: rgb(26 24 36 / 0.86);
-    --panel-2: rgb(255 255 255 / 0.04);
-    --glass: rgb(30 27 42 / 0.94);
-    --ink: #f0f0f4;
-    --muted: #a9a9b8;
-    --line: rgb(255 255 255 / 0.09);
-    --line-strong: rgb(255 255 255 / 0.18);
-    --brand: #7aa9ff;
-    --brand-strong: #8fb8ff;
-    --brand-soft: rgb(122 169 255 / 0.14);
-    --on-brand: #0b1020;
-    --violet: #c4a1ff;
-    --violet-soft: rgb(196 161 255 / 0.14);
-    --accent: #ffb26b;
-    --good: #5fd59a;
-    --good-soft: rgb(95 213 154 / 0.12);
-    --bad: #ff8a8a;
-    --bad-soft: rgb(255 138 138 / 0.12);
-    --warn: #f3c46b;
-    --warn-soft: rgb(243 196 107 / 0.12);
-    --pen-ink: #f0f0f4;
-    --pen-violet: #c4a1ff;
-    --pen-blue: #7aa9ff;
-    --pen-red: #ff8a8a;
-    --pen-green: #6ee0a6;
-    --pen-orange: #ffb26b;
-    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-    --shadow-md: 0 6px 18px rgb(0 0 0 / 0.45);
-    --shadow-lg: 0 18px 48px rgb(0 0 0 / 0.55);
-    --glow: radial-gradient(50rem 30rem at 15% 10%, rgb(124 63 209 / 0.18), transparent 60%),
-      radial-gradient(40rem 26rem at 85% 90%, rgb(80 70 200 / 0.16), transparent 60%);
-    --blur: blur(14px) saturate(140%);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --app: #0c0c11;
-  --canvas: #111117;
-  --dot: #2a2a36;
-  --panel: rgb(26 24 36 / 0.86);
-  --panel-2: rgb(255 255 255 / 0.04);
-  --glass: rgb(30 27 42 / 0.94);
-  --ink: #f0f0f4;
-  --muted: #a9a9b8;
-  --line: rgb(255 255 255 / 0.09);
-  --line-strong: rgb(255 255 255 / 0.18);
-  --brand: #7aa9ff;
-  --brand-strong: #8fb8ff;
-  --brand-soft: rgb(122 169 255 / 0.14);
-  --on-brand: #0b1020;
-  --violet: #c4a1ff;
-  --violet-soft: rgb(196 161 255 / 0.14);
-  --accent: #ffb26b;
-  --good: #5fd59a;
-  --good-soft: rgb(95 213 154 / 0.12);
-  --bad: #ff8a8a;
-  --bad-soft: rgb(255 138 138 / 0.12);
-  --warn: #f3c46b;
-  --warn-soft: rgb(243 196 107 / 0.12);
-  --pen-ink: #f0f0f4;
-  --pen-violet: #c4a1ff;
-  --pen-blue: #7aa9ff;
-  --pen-red: #ff8a8a;
-  --pen-green: #6ee0a6;
-  --pen-orange: #ffb26b;
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-  --shadow-md: 0 6px 18px rgb(0 0 0 / 0.45);
-  --shadow-lg: 0 18px 48px rgb(0 0 0 / 0.55);
-  --glow: radial-gradient(50rem 30rem at 15% 10%, rgb(124 63 209 / 0.18), transparent 60%),
-    radial-gradient(40rem 26rem at 85% 90%, rgb(80 70 200 / 0.16), transparent 60%);
-  --blur: blur(14px) saturate(140%);
-  color-scheme: dark;
 }
 
 @theme inline {
@@ -457,8 +450,44 @@ kbd {
   flex: 1;
   min-width: 0;
   overflow: hidden;
-  background: var(--canvas);
-  background-image: var(--glow);
+  background-color: var(--canvas);
+  background-image: var(--grain), var(--glow);
+  /* The board's frame: aluminium on the green board, wood on the blackboard. */
+  border: var(--frame-size) solid transparent;
+  border-image: var(--frame) 1;
+  box-shadow: var(--frame-shadow);
+}
+@media (max-width: 639px) {
+  .board-surface {
+    border-width: min(var(--frame-size), 5px);
+  }
+}
+/* Chalk: rough edges and grain (the #chalk filter in Whiteboard.tsx). None on the whiteboard. */
+.board-canvas .chalk {
+  filter: var(--chalk);
+}
+.board-text,
+.math-ink .katex,
+.widget-body .katex {
+  filter: var(--chalk-soft);
+}
+.theme-swatch {
+  width: 1.15rem;
+  height: 0.85rem;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1.5px var(--line-strong);
+}
+.theme-swatch[data-board="green"] {
+  background: #24432f;
+  box-shadow: 0 0 0 1.5px #a7afb6;
+}
+.theme-swatch[data-board="black"] {
+  background: #222624;
+  box-shadow: 0 0 0 1.5px #8a5a33;
+}
+.theme-swatch[data-board="light"] {
+  background: #ffffff;
+  box-shadow: 0 0 0 1.5px #cbd3de;
 }
 .board-canvas {
   display: block;
@@ -554,7 +583,7 @@ kbd {
   width: max-content;
   max-width: 560px;
   font-family: var(--font-hand), "Comic Sans MS", cursive;
-  line-height: 1.2;
+  line-height: 1.25;
   white-space: pre-wrap;
   pointer-events: auto;
   padding: 2px 4px;
@@ -616,6 +645,16 @@ kbd {
   box-shadow: var(--shadow-sm);
   pointer-events: auto;
   cursor: inherit;
+}
+/* On a chalkboard, tutor steps are written on the board inside a chalk box, not on a card. */
+:root:not([data-theme="light"]) .widget {
+  background: rgb(255 255 255 / 0.025);
+  border: 1.5px dashed var(--line-strong);
+  box-shadow: none;
+}
+:root:not([data-theme="light"]) .widget-head {
+  background: transparent;
+  border-bottom-style: dashed;
 }
 .widget[data-selected] {
   box-shadow: 0 0 0 2px var(--brand), var(--shadow-md);
@@ -794,7 +833,7 @@ kbd {
   width: 3.25rem;
   height: 3.25rem;
   background: var(--brand);
-  color: white;
+  color: var(--on-brand);
   box-shadow: 0 6px 18px color-mix(in srgb, var(--brand) 40%, transparent);
 }
 .tutor-dock-main:hover {
@@ -815,7 +854,7 @@ kbd {
 }
 .tutor-dock-action:hover:not(:disabled) {
   background: var(--brand);
-  color: white;
+  color: var(--on-brand);
   border-color: var(--brand);
   transform: translate(var(--dx), var(--dy)) scale(1.08);
 }

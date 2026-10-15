@@ -591,8 +591,37 @@ export function Whiteboard() {
         >
           <circle cx={1.5} cy={1.5} r={Math.max(1, 1.3 * camera.z)} fill="var(--dot)" />
         </pattern>
+        {/* The faint squares printed on classroom chalkboards (transparent on the whiteboard). */}
+        <pattern
+          id="board-grid"
+          width={56 * camera.z}
+          height={56 * camera.z}
+          x={camera.x}
+          y={camera.y}
+          patternUnits="userSpaceOnUse"
+        >
+          <path d={`M${56 * camera.z} 0.5 H0.5 V${56 * camera.z}`} fill="none" stroke="var(--grid)" strokeWidth={1} />
+        </pattern>
+        {/*
+          Chalk (used through `filter: var(--chalk)`): edges roughened by noise,
+          then speckled where the chalk skipped over the board's grain.
+        */}
+        <filter id="chalk" x="-15%" y="-15%" width="130%" height="130%" colorInterpolationFilters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="4" result="rough" />
+          <feDisplacementMap in="SourceGraphic" in2="rough" scale="2.2" xChannelSelector="R" yChannelSelector="G" result="edge" />
+          <feTurbulence type="fractalNoise" baseFrequency="1.3" numOctaves="1" seed="11" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  2.6 0 0 0 -0.45" result="mask" />
+          <feComposite in="edge" in2="mask" operator="in" />
+        </filter>
+        {/* Typeset maths and text notes: the grain only, so small symbols keep their shape. */}
+        <filter id="chalk-soft" x="-5%" y="-5%" width="110%" height="110%" colorInterpolationFilters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="1" seed="11" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  2.2 0 0 0 -0.15" result="mask" />
+          <feComposite in="SourceGraphic" in2="mask" operator="in" />
+        </filter>
       </defs>
       <rect width="100%" height="100%" fill="url(#board-dots)" />
+      <rect width="100%" height="100%" fill="url(#board-grid)" />
 
       <g transform={`translate(${camera.x} ${camera.y}) scale(${camera.z})`}>
         {objects.map((o) =>

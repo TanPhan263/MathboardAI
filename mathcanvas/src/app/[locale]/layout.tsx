@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { Caveat, Inter, Source_Sans_3 } from "next/font/google";
+import { Inter, Patrick_Hand, Source_Sans_3 } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -10,8 +10,8 @@ import "../globals.css";
 // "vietnamese" subsets so ă, ơ, ư and stacked tone marks render in the same face.
 const display = Inter({ variable: "--font-display", subsets: ["latin", "vietnamese"], weight: ["600", "700", "800"] });
 const body = Source_Sans_3({ variable: "--font-body", subsets: ["latin", "vietnamese"] });
-// Handwriting face for text notes on the board.
-const hand = Caveat({ variable: "--font-hand", subsets: ["latin"] });
+// Handwriting face for text notes on the board: chalk lettering, with Vietnamese tone marks.
+const hand = Patrick_Hand({ variable: "--font-hand", subsets: ["latin", "vietnamese"], weight: "400" });
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -32,17 +32,15 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0c0c11" },
-  ],
+  themeColor: "#1a1d1c",
 };
 
 /**
- * Apply the saved theme before first paint so there's no light→dark flash.
+ * Apply the saved board before first paint so there's no black→white flash.
+ * The blackboard needs no attribute (a saved "dark", the older theme, is the blackboard too).
  * Kept tiny and inline on purpose; it must run before React hydrates.
  */
-const THEME_SCRIPT = `try{var t=localStorage.getItem("mathcanvas:theme:v1");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
+const THEME_SCRIPT = `try{var t=localStorage.getItem("mathcanvas:theme:v1");if(t==="light"||t==="green")document.documentElement.dataset.theme=t}catch(e){}`;
 
 export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
   const { locale } = await params;

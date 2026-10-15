@@ -19,13 +19,14 @@ const MINIMIZED_KEY = "mathcanvas:tutor-minimized";
 
 function Shell() {
   const [tutorOpen, setTutorOpen] = useState(false);
-  // Desktop: the docked tutor can be minimized to a floating button. Remembered per browser
+  // Desktop: the docked tutor can be minimized to a floating button. It starts minimized,
+  // leaving the board free, until the learner opens it; their choice is remembered per browser
   // (the board only renders in the browser, so storage is readable here).
   const [minimized, setMinimizedState] = useState(() => {
     try {
-      return localStorage.getItem(MINIMIZED_KEY) === "1";
+      return localStorage.getItem(MINIMIZED_KEY) !== "0";
     } catch {
-      return false;
+      return true;
     }
   });
   const setMinimized = (next: boolean) => {

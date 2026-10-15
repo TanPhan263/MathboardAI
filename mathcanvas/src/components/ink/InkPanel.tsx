@@ -17,13 +17,33 @@ import { type Training, useInk } from "./InkProvider";
 /** How a symbol is shown on its tile. */
 const SHOW: Partial<Record<Sym, string>> = { "-": "−", "·": "×" };
 const show = (s: Sym) => SHOW[s] ?? s;
-/** Symbols with a spoken name (screen readers); digits and letters read as themselves. */
-const NAMED = new Set<Sym>(["-", "+", "=", "<", ">", "≤", "≥", "(", ")", "/", ".", "·", "?"]);
+/**
+ * Symbols with a spoken name (screen readers), by message key; digits and letters
+ * read as themselves. Keys are words: next-intl reads "." in a key as nesting.
+ */
+const NAMED: Partial<Record<Sym, string>> = {
+  "-": "minus",
+  "+": "plus",
+  "=": "equals",
+  "<": "less",
+  ">": "greater",
+  "≤": "atMost",
+  "≥": "atLeast",
+  "(": "open",
+  ")": "close",
+  "/": "divide",
+  ".": "point",
+  "·": "times",
+  "?": "unknown",
+};
 
 /** "plus", "mở ngoặc"…: what a screen reader says for a symbol. */
 function useSpoken() {
   const t = useTranslations("ink.symbol");
-  return (s: Sym) => (NAMED.has(s) ? t(s) : s);
+  return (s: Sym) => {
+    const key = NAMED[s];
+    return key ? t(key) : s;
+  };
 }
 
 const isTyping = (t: EventTarget | null) =>

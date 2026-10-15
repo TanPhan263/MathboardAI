@@ -37,9 +37,9 @@
     }
   },
   "theme": {
-    "system": "System Theme",
-    "light": "Light Theme",
-    "dark": "Dark Theme",
+    "green": "Green Board",
+    "black": "Blackboard",
+    "light": "Whiteboard",
     "switch": "{current} — switch to {next}",
     "title": "{current} (click to change)"
   },
@@ -137,19 +137,19 @@
     "graph": "Graph",
     "beautify": "Beautify",
     "symbol": {
-      "-": "minus",
-      "+": "plus",
-      "=": "equals",
-      "<": "less than",
-      ">": "greater than",
-      "≤": "at most",
-      "≥": "at least",
-      "(": "open bracket",
-      ")": "close bracket",
-      "/": "divide",
-      ".": "decimal point",
-      "·": "times",
-      "?": "unknown symbol"
+      "minus": "minus",
+      "plus": "plus",
+      "equals": "equals",
+      "less": "less than",
+      "greater": "greater than",
+      "atMost": "at most",
+      "atLeast": "at least",
+      "open": "open bracket",
+      "close": "close bracket",
+      "divide": "divide",
+      "point": "decimal point",
+      "times": "times",
+      "unknown": "unknown symbol"
     },
     "train": {
       "saved": "{count, plural, one {# fixed symbol saved} other {# fixed symbols saved}}",

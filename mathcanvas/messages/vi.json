@@ -37,9 +37,9 @@
     }
   },
   "theme": {
-    "system": "Giao diện hệ thống",
-    "light": "Giao diện sáng",
-    "dark": "Giao diện tối",
+    "green": "Bảng xanh",
+    "black": "Bảng đen",
+    "light": "Bảng trắng",
     "switch": "{current} — chuyển sang {next}",
     "title": "{current} (bấm để đổi)"
   },
@@ -137,19 +137,19 @@
     "graph": "Đồ thị",
     "beautify": "Viết đẹp",
     "symbol": {
-      "-": "trừ",
-      "+": "cộng",
-      "=": "bằng",
-      "<": "nhỏ hơn",
-      ">": "lớn hơn",
-      "≤": "nhỏ hơn hoặc bằng",
-      "≥": "lớn hơn hoặc bằng",
-      "(": "mở ngoặc",
-      ")": "đóng ngoặc",
-      "/": "chia",
-      ".": "dấu thập phân",
-      "·": "nhân",
-      "?": "ký hiệu chưa rõ"
+      "minus": "trừ",
+      "plus": "cộng",
+      "equals": "bằng",
+      "less": "nhỏ hơn",
+      "greater": "lớn hơn",
+      "atMost": "nhỏ hơn hoặc bằng",
+      "atLeast": "lớn hơn hoặc bằng",
+      "open": "mở ngoặc",
+      "close": "đóng ngoặc",
+      "divide": "chia",
+      "point": "dấu thập phân",
+      "times": "nhân",
+      "unknown": "ký hiệu chưa rõ"
     },
     "train": {
       "saved": "Đã lưu {count} ký hiệu bạn sửa",
