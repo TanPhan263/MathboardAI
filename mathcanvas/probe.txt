@@ -1,0 +1,13 @@
+
+### Cho hình chóp S.ABCD có đáy là hình bình hành tâm O. Gọi M, N lần lượt là trung điểm SA, SD. Chứng minh (OMN) // (SBC). Mặt phẳng (α) qua O song song với SA và BC; tìm thiết diện của hình chóp với (α).
+  => (OMN) \parallel (SBC)\ \checkmark 
+  => \text{Thiết diện: }PQRK\ (\text{hình thang}) 
+  [proof/passed] Chứng minh: \begin{cases} OM \parallel SC\ (\text{OM là đường trung bình của tam giác SAC}) \Rightarrow OM \parallel (SBC) \\ ON \parallel SB\ (\text{ON là đường trung bình của tam giác SBD}) \Rightarrow ON \parallel (SBC) \\ OM \cap ON = O;\ OM, ON \subset (OMN) \end{cases}\ \Rightarrow\ (OMN) \parallel (SBC)
+  [construct/passed] Xác định thiết diện: (\alpha)\ \text{qua }O,\ (\alpha) \parallel SA,\ (\alpha) \parallel BC\\ (\alpha) \cap (ABCD) = RK,\ RK \ni O,\ RK \parallel BC\ ((\alpha) \parallel BC),\ R \in AB,\ K \in CD\\ (\alpha) \cap (SAB) = RQ,\ RQ \parallel SA\ ((\alpha) \parallel SA),\ Q \in SB\\ (\alpha) \cap (SBC) = QP,\ QP \parallel BC\ ((\alpha) \parallel BC),\ P \in SC\\ (\alpha) \cap (SCD) = KP\\ \Rightarrow\ \text{thiết diện là hình thang }PQRK
+  note: PQ ∥ RK nên PQRK là hình thang.
+
+### Cho hình chóp S.ABCD có đáy ABCD là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Gọi M là trung điểm SB, N là trung điểm SD. Tìm thiết diện của hình chóp với (AMN) và tính diện tích thiết diện.
+  => \text{Thiết diện: }AMPN\ (\text{tứ giác}) 
+  => S_{AMPN} = \frac{a^2\sqrt{3}}{6} 0.2886751345948129
+  [construct/passed] Xác định thiết diện: (AMN) \cap (SAB) = AM\\ (AMN) \cap (SAD) = NA\\ \text{Chọn mặt phẳng }(SAC) \supset SC\\ \text{Trong }(SBD):\ MN \cap SO = I\\ (SAC) \cap (AMN) = AI;\ \text{trong }(SAC):\ SC \cap AI = P\ \Rightarrow\ P = SC \cap (AMN)\\ (AMN) \cap (SBC) = MP\\ (AMN) \cap (SCD) = PN\\ \Rightarrow\ \text{thiết diện là tứ giác }AMPN
+  [formula/passed] Diện tích thiết diện: \text{Hệ trục: gốc A, Ox theo AB, Oy theo AD, Oz ⊥ đáy (độ dài tính theo a)}\\A\left(0;\ 0;\ 0\right),\ M\left(\frac{a}{2};\ 0;\ \frac{a}{2}\right),\ P\left(\frac{a}{3};\ \frac{a}{3};\ \frac{2a}{3}\right),\ N\left(0;\ \frac{a}{2};\ \frac{a}{2}\right)\\ S_{AMPN} = \frac{1}{2}\left|\left[\overrightarrow{AM}, \overrightarrow{AP}\right] + \left[\overrightarrow{AP}, \overrightarrow{AN}\right]\right| = \frac{a^2\sqrt{3}}{6}

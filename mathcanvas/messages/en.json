@@ -1,0 +1,324 @@
+{
+  "meta": {
+    "title": "MathCanvas — A Whiteboard That Explains the Math",
+    "description": "Write a problem on the board and get verified, step-by-step help. Equations, inequalities, fractions and systems."
+  },
+  "app": {
+    "loading": "Opening your board…"
+  },
+  "topbar": {
+    "examples": "Examples",
+    "examplesMenu": "Example problems",
+    "groups": {
+      "Equations": "Equations",
+      "Fractions": "Fractions",
+      "Inequalities": "Inequalities",
+      "Systems": "Systems",
+      "Geometry2D": "Plane Geometry (Oxy)",
+      "Geometry3D": "Space Geometry (Oxyz)",
+      "Triangles": "Triangles",
+      "Solids": "Solids",
+      "Space": "Pyramids & Proofs",
+      "Parallel": "Parallel Lines & Sections",
+      "Conics": "Conics",
+      "Vectors": "Vectors"
+    },
+    "boardTitle": "Algebra Board",
+    "clear": "Clear Board",
+    "clearTitle": "Clear board (you can undo it)",
+    "tutor": "Tutor",
+    "language": "Language",
+    "switchLanguage": "Tiếng Việt",
+    "switchLanguageLabel": "Chuyển sang tiếng Việt",
+    "type": {
+      "label": "Type a Problem",
+      "placeholder": "e.g. A(1, 2, 3), (P): x + y + z - 3 = 0. Find the distance from A to (P).",
+      "add": "Add to Board"
+    }
+  },
+  "theme": {
+    "system": "System Theme",
+    "light": "Light Theme",
+    "dark": "Dark Theme",
+    "switch": "{current} — switch to {next}",
+    "title": "{current} (click to change)"
+  },
+  "tools": {
+    "nav": "Drawing tools",
+    "group": "Tools",
+    "select": "Select",
+    "hand": "Pan",
+    "pen": "Pen",
+    "area": "Select Math Area",
+    "eraser": "Eraser",
+    "text": "Text Note",
+    "line": "Line",
+    "rect": "Rectangle",
+    "ellipse": "Ellipse",
+    "colour": "Colour",
+    "penColour": "{name} pen",
+    "strokeSize": "Stroke size",
+    "strokeSizeN": "Stroke size {size}",
+    "colours": {
+      "Ink": "Ink",
+      "Violet": "Violet",
+      "Blue": "Blue",
+      "Red": "Red",
+      "Green": "Green",
+      "Orange": "Orange"
+    }
+  },
+  "view": {
+    "group": "History and zoom",
+    "undo": "Undo (Ctrl+Z)",
+    "redo": "Redo (Ctrl+Shift+Z)",
+    "zoomOut": "Zoom out (−)",
+    "zoomIn": "Zoom in (+)",
+    "zoom": "Zoom {pct}%. Reset view",
+    "resetTitle": "Reset view (0)",
+    "back": "Back to start",
+    "backTitle": "Back to start (0)"
+  },
+  "toast": {
+    "undo": "Undo",
+    "dismiss": "Dismiss",
+    "cleared": "Board cleared"
+  },
+  "board": {
+    "label": "Math whiteboard. Draw, write problems, and select one to get help.",
+    "textNote": "Text note",
+    "dragMove": "Drag to move",
+    "dragResize": "Drag to resize",
+    "tutorTag": "Tutor",
+    "practiceTag": "Practice",
+    "graph": "Graph",
+    "status": {
+      "passed": "Verified",
+      "failed": "Failed Check",
+      "unverified": "Unverified"
+    },
+    "graphDragHint": "Drag the dashed dots to change the problem.",
+    "handle": {
+      "root": "Drag along the axis to move this solution",
+      "vertex": "Drag to move the turning point",
+      "point": "Drag to move where the lines cross"
+    },
+    "apply": "Apply",
+    "cancel": "Cancel",
+    "figure": "Figure"
+  },
+  "ink": {
+    "panel": "Handwriting",
+    "readAs": "I Read This As",
+    "close": "Close and keep the drawing",
+    "kind": {
+      "system": "System",
+      "inequality": "Inequality",
+      "equation": "Equation",
+      "expression": "Expression"
+    },
+    "reading": "Reading your handwriting…",
+    "unreachable": "Couldn’t reach the handwriting reader. Check your connection, then try again.",
+    "tryAgain": "Try Again",
+    "notMaths": "This doesn’t read as maths yet. Fix the highlighted symbols.",
+    "ready": "Ready to solve",
+    "checkHighlighted": "{count, plural, one {Check the highlighted symbol — tap it to fix it.} other {Check # highlighted symbols — tap one to fix it.}}",
+    "tapToFix": "Wrong symbol? Tap it to fix it, or split and join wrongly cut ones.",
+    "chip": "Symbol {index} of {total}: {name}{unsure, select, true {, unsure} other {}}. Change",
+    "changeTo": "Change “{name}” to",
+    "split": "Split",
+    "splitTitle": "These strokes are more than one symbol",
+    "joinNext": "Join Next",
+    "joinTitle": "This and the next symbol are one symbol",
+    "undoFixes": "Undo My Fixes",
+    "next": "What next",
+    "explain": "Explain",
+    "hint": "Hint",
+    "graph": "Graph",
+    "beautify": "Beautify",
+    "symbol": {
+      "-": "minus",
+      "+": "plus",
+      "=": "equals",
+      "<": "less than",
+      ">": "greater than",
+      "≤": "at most",
+      "≥": "at least",
+      "(": "open bracket",
+      ")": "close bracket",
+      "/": "divide",
+      ".": "decimal point",
+      "·": "times",
+      "?": "unknown symbol"
+    },
+    "train": {
+      "saved": "{count, plural, one {# fixed symbol saved} other {# fixed symbols saved}}",
+      "more": " · {count} more to train",
+      "empty": "Symbols you fix are saved to train the reader on your handwriting",
+      "personal": " · reading with your model",
+      "button": "Train On My Writing",
+      "running": "Training…",
+      "readyTitle": "Train the reader on the symbols you fixed",
+      "needTitle": "Fix {count} more symbols first",
+      "delete": "Delete my saved symbols and handwriting model",
+      "deleteTitle": "Delete",
+      "confirmDelete": "Delete your saved symbols and your handwriting model?",
+      "installed": "Installed: your handwriting model is updated.",
+      "keptWorse": "The new model was worse at other people’s handwriting, so your current model was kept.",
+      "keptNoBetter": "The new model didn’t read your handwriting any better, so your current model was kept.",
+      "failed": "Training stopped with an error. Try again later.",
+      "needMore": "Fix at least {count} symbols first.",
+      "unavailable": "Training isn’t set up on this server.",
+      "error": "The handwriting service didn’t answer. Try again later."
+    }
+  },
+  "tutor": {
+    "title": "Tutor",
+    "beta": "Beta",
+    "working": "Working…",
+    "minimize": "Minimize tutor panel",
+    "minimizeTitle": "Minimize",
+    "close": "Close tutor panel",
+    "actions": "Tutor actions",
+    "explain": "Explain",
+    "hint": "Hint",
+    "checkWork": "Check Work",
+    "graph": "Graph",
+    "practice": "Practice",
+    "readFromHandwriting": "Read From Your Handwriting",
+    "workingOn": "Working On",
+    "beautify": "Beautify",
+    "showAsWritten": "Show As Written",
+    "selectProblem": "<b>Select a problem</b> on the board, or write one with the pen and box it with Select Math Area. Equations, fractions, inequalities, systems, vectors, coordinate geometry (Oxy, Oxyz), conics, triangles, solids, pyramids and prisms, parallel lines and cross-sections all work.",
+    "combine": "<b>{count} equations selected.</b> Solve them together?",
+    "makeSystem": "Make a System",
+    "dismissMessage": "Dismiss message",
+    "about": {
+      "explain": "walk through the solution one verified step at a time.",
+      "hint": "a nudge, not the answer.",
+      "checkWork": "finds the first line on your board that goes wrong.",
+      "graph": "draws the problem on the board.",
+      "practice": "a fresh problem of the same kind."
+    },
+    "noProblem": {
+      "message": "Pick an equation first.",
+      "suggestion": "Click an equation on the board, or write one with the pen and box it with Select Math Area."
+    },
+    "noWork": {
+      "message": "There's no work to check yet.",
+      "suggestion": "Write your steps as math lines on the board, top to bottom — one per step."
+    },
+    "explainFirst": {
+      "message": "Explain the problem first.",
+      "suggestion": "Then you can ask about any step."
+    },
+    "steps": {
+      "stepOf": "Step {current} of {total}",
+      "count": "{count, plural, one {# step} other {# steps}}",
+      "how": "How to show the steps",
+      "player": "Step by Step",
+      "all": "All Steps",
+      "back": "Back",
+      "review": "Review All Steps",
+      "next": "Next Step",
+      "answer": "Answer",
+      "why": "Why Is This Allowed?",
+      "write": "Write Steps on the Board",
+      "rewrite": "Rewrite Steps on the Board",
+      "caption": "Step {n} · {operation}"
+    },
+    "hints": {
+      "intro": "Try the next move yourself. Each hint nudges you without giving the step away.",
+      "of": "Hint {n} of {total}",
+      "another": "Another Hint",
+      "allShown": "That’s every hint. Stuck? See the full solution.",
+      "full": "Show Full Solution"
+    },
+    "check": {
+      "wrongAt": "Your work goes wrong at line {line}. Everything before it holds up.",
+      "allGood": "Every line is consistent with the one above it.",
+      "some": "Some lines couldn't be checked — see below.",
+      "line": "Line {line} · {label}",
+      "start": "Starting point",
+      "passed": "Valid step",
+      "failed": "This step changed the answer",
+      "unverified": "Can't check this line"
+    },
+    "practiceView": {
+      "intro": "Same idea, new numbers.",
+      "answer": "Your Answer",
+      "check": "Check",
+      "onBoard": "On the Board",
+      "workOnBoard": "Work It Out on the Board",
+      "new": "New Problem",
+      "caption": "Practice",
+      "placeholder": {
+        "linear-equation": "e.g. x = 3",
+        "quadratic-equation": "e.g. 2, 5",
+        "rational-equation": "e.g. x = 4",
+        "linear-inequality": "e.g. x < 3",
+        "quadratic-inequality": "e.g. x < 1 or x > 4",
+        "linear-system": "e.g. x = 1, y = 2",
+        "geometry-2d": "e.g. 2, (1, 3) or 3x - 4y + 5 = 0",
+        "geometry-3d": "e.g. 2√3, (1, 2, 3) or 2x - y + z - 1 = 0",
+        "triangle": "e.g. 7 or 10√3",
+        "solid": "e.g. 12π",
+        "space-figure": "e.g. a³√2/3 or 45°",
+        "conic": "e.g. x^2/25 + y^2/9 = 1, (4, 0) or 4/5",
+        "vector": "e.g. AM = 1/2 AB + 1/2 AC or a^2/2"
+      },
+      "help": {
+        "linear-equation": "Fractions like 1/2 work.",
+        "quadratic-equation": "Separate several answers with commas or “or”. Fractions like 1/2 work.",
+        "rational-equation": "Leave out any value that makes a denominator 0.",
+        "linear-inequality": "Write it like x < 3 or x ≥ −2, or in interval notation such as (−inf, 3).",
+        "quadratic-inequality": "Use “or” for two pieces, or interval notation like [1, 4].",
+        "linear-system": "Give every unknown, like x = 1, y = 2 — or as a point (1, 2).",
+        "geometry-2d": "Roots are fine (2√3 or 2sqrt(3)). Write points as (1, 2), lines as ax + by + c = 0, circles as (x - a)^2 + (y - b)^2 = R^2.",
+        "geometry-3d": "Roots are fine (2√3 or 2sqrt(3)). Write points as (1, 2, 3), planes as ax + by + cz + d = 0, lines as x = 1 + 2t, y = …, z = …",
+        "triangle": "Roots are fine (10√3 or 10sqrt(3)). Angles in degrees.",
+        "solid": "Keep π: write 12π or 12pi.",
+        "space-figure": "Write the answer in terms of a, e.g. a^3√2/3, a√6/3; angles in degrees.",
+        "vector": "Write vectors as two capital letters, like AM = 1/2 AB + 1/2 AC; dot products and lengths in terms of a, like a^2/2 or a√3.",
+        "conic": "Write equations like x^2/25 + y^2/9 = 1 or y^2 = 8x, points like (4, 0); roots are fine (2√5)."
+      }
+    },
+    "chat": {
+      "title": "Ask About Step {n}",
+      "pick": "Click a step above, or select it on the board, to ask about a different one.",
+      "you": "You: ",
+      "tutor": "Tutor: ",
+      "typing": "Tutor is typing",
+      "ask": "Ask the tutor a question",
+      "placeholder": "Ask in your own words…",
+      "send": "Send question",
+      "provider": "Tutor: {name}",
+      "quick": {
+        "why": "Why is this step allowed?",
+        "simpler": "Explain it more simply.",
+        "alternative": "Is there another way?",
+        "skip": "What if I skip it?"
+      },
+      "unreachable": "I couldn't reach the tutor just now. Your work is safe — try again in a moment."
+    },
+    "dock": {
+      "toolbar": "Tutor quick actions",
+      "open": "Open the tutor",
+      "label": "Tutor",
+      "dismiss": "Dismiss",
+      "failed": "That didn't work. Try again.",
+      "wrongLine": "Line {line} doesn't follow from the line above.",
+      "allGood": "Every line checks out.",
+      "unsure": "{count, plural, one {No mistakes found; # line I couldn't check.} other {No mistakes found; # lines I couldn't check.}}",
+      "marks": "Marks are on the board next to each line.",
+      "graphDone": "Graph drawn on the board.",
+      "graphHint": "Drag its dashed dots to try a different problem.",
+      "stepsDone": "{count, plural, one {# step written on the board.} other {# steps written on the board.}}",
+      "stepsNote": "Every step is checked by computation.",
+      "hintOf": "Hint {n} of {total}",
+      "practiceDone": "A practice problem is on the board.",
+      "practiceNote": "Solve it there, then use Check Work.",
+      "figureDone": "Figure drawn on the board."
+    }
+  }
+}

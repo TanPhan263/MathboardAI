@@ -1,0 +1,11 @@
+# Serving
+fastapi==0.143.0
+uvicorn[standard]==0.54.0
+numpy==2.5.4
+# CPU build is enough (pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu)
+torch==2.14.1
+# Training data preparation only (ml/prepare.py)
+pillow
+# Tests
+pytest
+httpx

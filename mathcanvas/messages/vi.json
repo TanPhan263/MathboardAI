@@ -1,0 +1,324 @@
+{
+  "meta": {
+    "title": "MathCanvas — Bảng trắng giải thích Toán",
+    "description": "Viết bài toán lên bảng và nhận lời giải từng bước đã được kiểm chứng. Phương trình, bất phương trình, phân thức và hệ phương trình."
+  },
+  "app": {
+    "loading": "Đang mở bảng của bạn…"
+  },
+  "topbar": {
+    "examples": "Ví dụ",
+    "examplesMenu": "Bài toán mẫu",
+    "groups": {
+      "Equations": "Phương trình",
+      "Fractions": "Phân thức",
+      "Inequalities": "Bất phương trình",
+      "Systems": "Hệ phương trình",
+      "Geometry2D": "Hình học phẳng (Oxy)",
+      "Geometry3D": "Hình học không gian (Oxyz)",
+      "Triangles": "Hệ thức lượng tam giác",
+      "Solids": "Khối tròn xoay",
+      "Space": "Hình chóp & chứng minh",
+      "Parallel": "Quan hệ song song & thiết diện",
+      "Conics": "Ba đường conic",
+      "Vectors": "Vectơ"
+    },
+    "boardTitle": "Bảng Đại số",
+    "clear": "Xoá bảng",
+    "clearTitle": "Xoá bảng (có thể hoàn tác)",
+    "tutor": "Gia sư",
+    "language": "Ngôn ngữ",
+    "switchLanguage": "English",
+    "switchLanguageLabel": "Switch to English",
+    "type": {
+      "label": "Nhập đề bài",
+      "placeholder": "vd. A(1; 2; 3), (P): x + y + z - 3 = 0. Tính khoảng cách từ A đến (P).",
+      "add": "Thêm vào bảng"
+    }
+  },
+  "theme": {
+    "system": "Giao diện hệ thống",
+    "light": "Giao diện sáng",
+    "dark": "Giao diện tối",
+    "switch": "{current} — chuyển sang {next}",
+    "title": "{current} (bấm để đổi)"
+  },
+  "tools": {
+    "nav": "Công cụ vẽ",
+    "group": "Công cụ",
+    "select": "Chọn",
+    "hand": "Kéo bảng",
+    "pen": "Bút",
+    "area": "Chọn vùng Toán",
+    "eraser": "Tẩy",
+    "text": "Ghi chú",
+    "line": "Đoạn thẳng",
+    "rect": "Hình chữ nhật",
+    "ellipse": "Hình elip",
+    "colour": "Màu",
+    "penColour": "Bút {name}",
+    "strokeSize": "Cỡ nét",
+    "strokeSizeN": "Cỡ nét {size}",
+    "colours": {
+      "Ink": "mực",
+      "Violet": "tím",
+      "Blue": "xanh dương",
+      "Red": "đỏ",
+      "Green": "xanh lá",
+      "Orange": "cam"
+    }
+  },
+  "view": {
+    "group": "Lịch sử và thu phóng",
+    "undo": "Hoàn tác (Ctrl+Z)",
+    "redo": "Làm lại (Ctrl+Shift+Z)",
+    "zoomOut": "Thu nhỏ (−)",
+    "zoomIn": "Phóng to (+)",
+    "zoom": "Thu phóng {pct}%. Đặt lại khung nhìn",
+    "resetTitle": "Đặt lại khung nhìn (0)",
+    "back": "Về vị trí ban đầu",
+    "backTitle": "Về vị trí ban đầu (0)"
+  },
+  "toast": {
+    "undo": "Hoàn tác",
+    "dismiss": "Đóng",
+    "cleared": "Đã xoá bảng"
+  },
+  "board": {
+    "label": "Bảng trắng Toán. Vẽ, viết bài toán và chọn một bài để được hướng dẫn.",
+    "textNote": "Ghi chú",
+    "dragMove": "Kéo để di chuyển",
+    "dragResize": "Kéo để đổi kích thước",
+    "tutorTag": "Gia sư",
+    "practiceTag": "Luyện tập",
+    "graph": "Đồ thị",
+    "status": {
+      "passed": "Đã kiểm chứng",
+      "failed": "Sai",
+      "unverified": "Chưa kiểm chứng"
+    },
+    "graphDragHint": "Kéo các chấm nét đứt để thay đổi bài toán.",
+    "handle": {
+      "root": "Kéo dọc trục để di chuyển nghiệm này",
+      "vertex": "Kéo để di chuyển đỉnh parabol",
+      "point": "Kéo để di chuyển giao điểm hai đường thẳng"
+    },
+    "apply": "Áp dụng",
+    "cancel": "Huỷ",
+    "figure": "Hình vẽ"
+  },
+  "ink": {
+    "panel": "Chữ viết tay",
+    "readAs": "Mình đọc được là",
+    "close": "Đóng và giữ nét vẽ",
+    "kind": {
+      "system": "Hệ phương trình",
+      "inequality": "Bất phương trình",
+      "equation": "Phương trình",
+      "expression": "Biểu thức"
+    },
+    "reading": "Đang đọc chữ viết tay của bạn…",
+    "unreachable": "Không kết nối được với bộ đọc chữ viết tay. Kiểm tra kết nối rồi thử lại.",
+    "tryAgain": "Thử lại",
+    "notMaths": "Chưa đọc được thành biểu thức Toán. Hãy sửa các ký hiệu được tô sáng.",
+    "ready": "Sẵn sàng giải",
+    "checkHighlighted": "{count, plural, one {Kiểm tra ký hiệu được tô sáng — chạm vào để sửa.} other {Kiểm tra # ký hiệu được tô sáng — chạm vào một ký hiệu để sửa.}}",
+    "tapToFix": "Sai ký hiệu? Chạm vào để sửa, hoặc tách/gộp những ký hiệu bị cắt sai.",
+    "chip": "Ký hiệu {index}/{total}: {name}{unsure, select, true {, chưa chắc} other {}}. Đổi",
+    "changeTo": "Đổi “{name}” thành",
+    "split": "Tách",
+    "splitTitle": "Các nét này là nhiều hơn một ký hiệu",
+    "joinNext": "Gộp với ký hiệu sau",
+    "joinTitle": "Ký hiệu này và ký hiệu tiếp theo là một",
+    "undoFixes": "Bỏ các chỉnh sửa",
+    "next": "Bước tiếp theo",
+    "explain": "Giải thích",
+    "hint": "Gợi ý",
+    "graph": "Đồ thị",
+    "beautify": "Viết đẹp",
+    "symbol": {
+      "-": "trừ",
+      "+": "cộng",
+      "=": "bằng",
+      "<": "nhỏ hơn",
+      ">": "lớn hơn",
+      "≤": "nhỏ hơn hoặc bằng",
+      "≥": "lớn hơn hoặc bằng",
+      "(": "mở ngoặc",
+      ")": "đóng ngoặc",
+      "/": "chia",
+      ".": "dấu thập phân",
+      "·": "nhân",
+      "?": "ký hiệu chưa rõ"
+    },
+    "train": {
+      "saved": "Đã lưu {count} ký hiệu bạn sửa",
+      "more": " · cần thêm {count} để huấn luyện",
+      "empty": "Ký hiệu bạn sửa sẽ được lưu để bộ đọc học chữ viết tay của bạn",
+      "personal": " · đang đọc bằng mô hình của bạn",
+      "button": "Học chữ viết của tôi",
+      "running": "Đang huấn luyện…",
+      "readyTitle": "Huấn luyện bộ đọc với các ký hiệu bạn đã sửa",
+      "needTitle": "Hãy sửa thêm {count} ký hiệu trước",
+      "delete": "Xoá các ký hiệu đã lưu và mô hình chữ viết của tôi",
+      "deleteTitle": "Xoá",
+      "confirmDelete": "Xoá các ký hiệu đã lưu và mô hình chữ viết tay của bạn?",
+      "installed": "Đã cài đặt: mô hình chữ viết của bạn đã được cập nhật.",
+      "keptWorse": "Mô hình mới đọc chữ của người khác kém hơn, nên vẫn giữ mô hình hiện tại.",
+      "keptNoBetter": "Mô hình mới không đọc chữ của bạn tốt hơn, nên vẫn giữ mô hình hiện tại.",
+      "failed": "Huấn luyện bị lỗi. Vui lòng thử lại sau.",
+      "needMore": "Hãy sửa ít nhất {count} ký hiệu trước.",
+      "unavailable": "Máy chủ này chưa bật chức năng huấn luyện.",
+      "error": "Dịch vụ đọc chữ viết tay không phản hồi. Vui lòng thử lại sau."
+    }
+  },
+  "tutor": {
+    "title": "Gia sư",
+    "beta": "Thử nghiệm",
+    "working": "Đang xử lý…",
+    "minimize": "Thu nhỏ bảng gia sư",
+    "minimizeTitle": "Thu nhỏ",
+    "close": "Đóng bảng gia sư",
+    "actions": "Chức năng gia sư",
+    "explain": "Giải thích",
+    "hint": "Gợi ý",
+    "checkWork": "Kiểm tra bài",
+    "graph": "Đồ thị",
+    "practice": "Luyện tập",
+    "readFromHandwriting": "Đọc từ chữ viết tay của bạn",
+    "workingOn": "Đang giải",
+    "beautify": "Viết đẹp",
+    "showAsWritten": "Hiện nét gốc",
+    "selectProblem": "<b>Chọn một bài toán</b> trên bảng, hoặc viết bằng bút rồi khoanh vùng bằng công cụ Chọn vùng Toán. Hỗ trợ phương trình, phân thức, bất phương trình, hệ phương trình, vectơ, hình học tọa độ (Oxy, Oxyz), ba đường conic, tam giác, khối tròn xoay, hình chóp, lăng trụ, quan hệ song song và thiết diện.",
+    "combine": "<b>Đã chọn {count} phương trình.</b> Giải chúng thành một hệ?",
+    "makeSystem": "Lập hệ phương trình",
+    "dismissMessage": "Đóng thông báo",
+    "about": {
+      "explain": "đi qua lời giải từng bước, mỗi bước đều được kiểm chứng.",
+      "hint": "một lời nhắc nhỏ, không phải đáp án.",
+      "checkWork": "tìm dòng đầu tiên bị sai trong bài làm trên bảng.",
+      "graph": "vẽ đồ thị bài toán lên bảng.",
+      "practice": "một bài mới cùng dạng."
+    },
+    "noProblem": {
+      "message": "Hãy chọn một phương trình trước.",
+      "suggestion": "Bấm vào một phương trình trên bảng, hoặc viết bằng bút rồi khoanh vùng bằng công cụ Chọn vùng Toán."
+    },
+    "noWork": {
+      "message": "Chưa có bài làm để kiểm tra.",
+      "suggestion": "Viết từng bước giải thành các dòng trên bảng, từ trên xuống — mỗi dòng một bước."
+    },
+    "explainFirst": {
+      "message": "Hãy bấm Giải thích trước.",
+      "suggestion": "Sau đó bạn có thể hỏi về bất kỳ bước nào."
+    },
+    "steps": {
+      "stepOf": "Bước {current}/{total}",
+      "count": "{count} bước",
+      "how": "Cách hiển thị các bước",
+      "player": "Từng bước",
+      "all": "Tất cả các bước",
+      "back": "Quay lại",
+      "review": "Xem lại tất cả",
+      "next": "Bước tiếp",
+      "answer": "Đáp số",
+      "why": "Vì sao được làm như vậy?",
+      "write": "Viết lời giải lên bảng",
+      "rewrite": "Viết lại lời giải lên bảng",
+      "caption": "Bước {n} · {operation}"
+    },
+    "hints": {
+      "intro": "Hãy tự làm bước tiếp theo. Mỗi gợi ý chỉ nhắc hướng đi, không cho sẵn lời giải.",
+      "of": "Gợi ý {n}/{total}",
+      "another": "Gợi ý tiếp",
+      "allShown": "Đã hết gợi ý. Vẫn bí? Xem lời giải đầy đủ.",
+      "full": "Xem lời giải đầy đủ"
+    },
+    "check": {
+      "wrongAt": "Bài làm bắt đầu sai ở dòng {line}. Các dòng trước đó đều đúng.",
+      "allGood": "Mọi dòng đều nhất quán với dòng phía trên.",
+      "some": "Có dòng chưa kiểm tra được — xem bên dưới.",
+      "line": "Dòng {line} · {label}",
+      "start": "Đề bài",
+      "passed": "Bước đúng",
+      "failed": "Bước này làm thay đổi đáp số",
+      "unverified": "Chưa kiểm tra được dòng này"
+    },
+    "practiceView": {
+      "intro": "Cùng dạng, số mới.",
+      "answer": "Đáp số của bạn",
+      "check": "Kiểm tra",
+      "onBoard": "Đã đưa lên bảng",
+      "workOnBoard": "Làm bài trên bảng",
+      "new": "Bài mới",
+      "caption": "Luyện tập",
+      "placeholder": {
+        "linear-equation": "vd. x = 3",
+        "quadratic-equation": "vd. 2, 5",
+        "rational-equation": "vd. x = 4",
+        "linear-inequality": "vd. x < 3",
+        "quadratic-inequality": "vd. x < 1 hoặc x > 4",
+        "linear-system": "vd. x = 1, y = 2",
+        "geometry-2d": "vd. 2, (1; 3) hoặc 3x - 4y + 5 = 0",
+        "geometry-3d": "vd. 2√3, (1; 2; 3) hoặc 2x - y + z - 1 = 0",
+        "triangle": "vd. 7 hoặc 10√3",
+        "solid": "vd. 12π",
+        "space-figure": "vd. a³√2/3 hoặc 45°",
+        "conic": "vd. x^2/25 + y^2/9 = 1, (4; 0) hoặc 4/5",
+        "vector": "vd. AM = 1/2 AB + 1/2 AC hoặc a^2/2"
+      },
+      "help": {
+        "linear-equation": "Có thể nhập phân số như 1/2.",
+        "quadratic-equation": "Nhiều nghiệm thì ngăn cách bằng dấu phẩy hoặc “hoặc”. Có thể nhập phân số như 1/2.",
+        "rational-equation": "Loại các giá trị làm mẫu bằng 0.",
+        "linear-inequality": "Viết dạng x < 3 hoặc x ≥ −2, hoặc dạng khoảng như (−inf, 3).",
+        "quadratic-inequality": "Dùng “hoặc” cho hai khoảng, hoặc dạng đoạn như [1, 4].",
+        "linear-system": "Ghi đủ các ẩn, như x = 1, y = 2 — hoặc dạng điểm (1, 2).",
+        "geometry-2d": "Có thể dùng căn (2√3 hoặc 2sqrt(3)). Viết điểm dạng (1; 2), đường thẳng dạng ax + by + c = 0, đường tròn dạng (x - a)^2 + (y - b)^2 = R^2.",
+        "geometry-3d": "Có thể dùng căn (2√3 hoặc 2sqrt(3)). Viết điểm dạng (1; 2; 3), mặt phẳng dạng ax + by + cz + d = 0, đường thẳng dạng x = 1 + 2t, y = …, z = …",
+        "triangle": "Có thể dùng căn (10√3 hoặc 10sqrt(3)). Góc tính bằng độ.",
+        "solid": "Giữ π: viết 12π hoặc 12pi.",
+        "space-figure": "Viết đáp số theo a, ví dụ a^3√2/3, a√6/3; góc tính bằng độ.",
+        "vector": "Viết vectơ bằng hai chữ cái in hoa, như AM = 1/2 AB + 1/2 AC; tích vô hướng, độ dài viết theo a, như a^2/2 hoặc a√3.",
+        "conic": "Phương trình viết dạng x^2/25 + y^2/9 = 1 hoặc y^2 = 8x; điểm dạng (4; 0); có thể dùng căn (2√5)."
+      }
+    },
+    "chat": {
+      "title": "Hỏi về bước {n}",
+      "pick": "Bấm vào một bước ở trên, hoặc chọn nó trên bảng, để hỏi về bước khác.",
+      "you": "Bạn: ",
+      "tutor": "Gia sư: ",
+      "typing": "Gia sư đang trả lời",
+      "ask": "Đặt câu hỏi cho gia sư",
+      "placeholder": "Hỏi theo cách của bạn…",
+      "send": "Gửi câu hỏi",
+      "provider": "Gia sư: {name}",
+      "quick": {
+        "why": "Vì sao bước này được phép làm?",
+        "simpler": "Giải thích đơn giản hơn.",
+        "alternative": "Có cách khác không?",
+        "skip": "Nếu bỏ qua bước này thì sao?"
+      },
+      "unreachable": "Chưa kết nối được với gia sư. Bài làm của bạn vẫn an toàn — hãy thử lại sau giây lát."
+    },
+    "dock": {
+      "toolbar": "Chức năng nhanh của gia sư",
+      "open": "Mở gia sư",
+      "label": "Gia sư",
+      "dismiss": "Đóng",
+      "failed": "Chưa thực hiện được. Hãy thử lại.",
+      "wrongLine": "Dòng {line} không suy ra được từ dòng phía trên.",
+      "allGood": "Mọi dòng đều đúng.",
+      "unsure": "Không thấy lỗi; có {count} dòng chưa kiểm tra được.",
+      "marks": "Kết quả được đánh dấu bên cạnh từng dòng trên bảng.",
+      "graphDone": "Đã vẽ đồ thị lên bảng.",
+      "graphHint": "Kéo các chấm nét đứt để thử bài toán khác.",
+      "stepsDone": "Đã viết {count} bước lên bảng.",
+      "stepsNote": "Mỗi bước đều được kiểm chứng bằng tính toán.",
+      "hintOf": "Gợi ý {n}/{total}",
+      "practiceDone": "Đã đưa một bài luyện tập lên bảng.",
+      "practiceNote": "Giải trên bảng, rồi dùng Kiểm tra bài.",
+      "figureDone": "Đã vẽ hình lên bảng."
+    }
+  }
+}
